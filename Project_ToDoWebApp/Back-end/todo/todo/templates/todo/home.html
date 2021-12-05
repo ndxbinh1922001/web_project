@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		{% load static %}
+
+		<!-- Font awesome -->
+		<link
+			rel="stylesheet"
+			href="{% static 'font/fontawesome-free/css/all.min.css' %}"
+		/>
+		<script
+			src="https://kit.fontawesome.com/ed30720c88.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Bootstrap -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+		<title>ToDoApp</title>
+	</head>
+
+	<body>
+		<main>
+			<!-- Nav bar start -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<img
+						src="{% static 'img/ToDoApp.svg'%}"
+						alt="logo google"
+						class="logo-google"
+					/>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div
+						class="collapse navbar-collapse"
+						id="navbarSupportedContent"
+					>
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle fs-3"
+									href="#"
+									id="navbarDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Task
+								</a>
+								<ul
+									class="dropdown-menu"
+									aria-labelledby="navbarDropdown"
+								>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Short-term task</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Med-term assigmnet
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Long-term work</a
+										>
+									</li>
+									<li><hr class="dropdown-divider" /></li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Other tasks</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle fs-3"
+									href="#"
+									id="navbarDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Event
+								</a>
+								<ul
+									class="dropdown-menu"
+									aria-labelledby="navbarDropdown"
+								>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Tourist</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Places of interest</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Restaurant and food places</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Park and hotspot</a
+										>
+									</li>
+									<li><hr class="dropdown-divider" /></li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Other occassions</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle fs-3"
+									href="#"
+									id="navbarDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Hobby
+								</a>
+								<ul
+									class="dropdown-menu"
+									aria-labelledby="navbarDropdown"
+								>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Film & Movie</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Music & Chill out</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Game & Podcast</a
+										>
+									</li>
+									<li><hr class="dropdown-divider" /></li>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Other interests</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle fs-3"
+									href="#"
+									id="navbarDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									About us
+								</a>
+								<ul
+									class="dropdown-menu"
+									aria-labelledby="navbarDropdown"
+								>
+									<li>
+										<a class="dropdown-item" href="#"
+											>Donations</a
+										>
+									</li>
+									<li>
+										<a
+											class="dropdown-item"
+											href="/content/"
+											>Inspirations and Content</a
+										>
+									</li>
+									<li><hr class="dropdown-divider" /></li>
+									<li>
+										<a
+											class="dropdown-item"
+											href="/members/"
+											>Member</a
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div>
+						<button class="button-login js-button-login bg-light">
+							Log In
+						</button>
+						<div>
+							<button class="button-logup js-button-logup">
+								Try free
+							</button>
+						</div>
+					</div>
+
+					<!-- <form class="d-flex">
+					  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					  <button class="btn btn-outline-success" type="submit">Search</button>
+					</form> -->
+				</div>
+			</nav>
+			<!-- Nav bar end -->
+
+			<!-- <div id="header">
+				<img
+					src="{% static 'img/ToDoApp.svg'%}"
+					alt="logo google"
+					class="logo-google"
+				/>
+				<div id="js-nav" class="nav">
+					<div>
+						<div href="#">
+							Activity
+							<i
+								class="
+									fas
+									fa-chevron-down
+									hide-mobile-ipad-icon
+								"
+							></i>
+							<i
+								class="
+									fas
+									fa-chevron-right
+									mobile-ipad-icon-show
+								"
+							></i>
+						</div>
+						<div class="subnav">
+							<div>Event</div>
+							<div>Workshop</div>
+							<div>Seminar</div>
+						</div>
+					</div>
+					<div>
+						<div href="#">
+							Task
+							<i
+								class="
+									fas
+									fa-chevron-down
+									hide-mobile-ipad-icon
+								"
+							></i>
+							<i
+								class="
+									fas
+									fa-chevron-right
+									mobile-ipad-icon-show
+								"
+							></i>
+						</div>
+						<div class="subnav">
+							<div>Short-term task</div>
+							<div>Med-term task</div>
+							<div>Long-term task</div>
+						</div>
+					</div>
+					<div>
+						<div href="#">
+							Journey
+							<i
+								class="
+									fas
+									fa-chevron-down
+									hide-mobile-ipad-icon
+								"
+							></i>
+							<i
+								class="
+									fas
+									fa-chevron-right
+									mobile-ipad-icon-show
+								"
+							></i>
+						</div>
+						<div class="subnav">
+							<div>Tourist</div>
+							<div>Restaurants</div>
+							<div>Company work</div>
+						</div>
+					</div>
+					<div>
+						<div href="#">
+							Hobby
+							<i
+								class="
+									fas
+									fa-chevron-down
+									hide-mobile-ipad-icon
+								"
+							></i>
+							<i
+								class="
+									fas
+									fa-chevron-right
+									mobile-ipad-icon-show
+								"
+							></i>
+						</div>
+						<div class="subnav">
+							<div>Music & Podcast</div>
+							<div>Film & Movie</div>
+							<div>Game </div>
+							<div>Comic </div>
+						</div>
+					</div>
+					<div>
+						<div href="#">
+							About us
+							<i
+								class="
+									fas
+									fa-chevron-down
+									hide-mobile-ipad-icon
+								"
+							></i>
+							<i
+								class="
+									fas
+									fa-chevron-right
+									mobile-ipad-icon-show
+								"
+							></i>
+						</div>
+						<div class="subnav">
+							<div>Donation</div>
+							<div>Member</div>
+							<div>Ideas</div>
+						</div>
+					</div>
+				</div>
+				<div end-header>
+					<button class="button-login js-button-login">Log In</button>
+					<div>
+						<button class="button-logup js-button-logup">
+							Try free
+						</button>
+					</div>
+					<div>
+						<button
+							id="js-menu-mobile-ipad"
+							class="menu-mobile-ipad"
+						>
+							<i class="fas fa-bars"></i>
+						</button>
+					</div>
+				</div>
+			</div> -->
+			<div id="content-web">
+				<div class="introduce">
+					<div class="content-introduce">
+						<div class="tittle-introduce">One workspace.</div>
+						<div class="tittle-introduce">Every team.</div>
+						<div class="tittle-introduce">
+							Has your own characteristics
+						</div>
+						<div class="subtittle-introduce">
+							We’re more than a doc. Or a table.
+						</div>
+						<div class="subtittle-introduce">
+							Customize to work the way you do.
+						</div>
+
+						<button class="button-logup js-button-logup">
+							Try free
+						</button>
+						<div class="padding-more"></div>
+					</div>
+					<img
+						src="{% static 'img/Tasklist_TodoApppng.png' %}"
+						alt="anh introduce"
+						class="img-intro"
+					/>
+				</div>
+
+				<div class="introduce">
+					<div class="content-introduce">
+						<div class="tittle-introduce">
+							New itinerary without any messy
+						</div>
+						<div class="subtittle-introduce">
+							Connect your teams, projects, and docs in ToDoApp —
+							you can make polite pinned lists for a great plan
+						</div>
+						<div class="padding-more"></div>
+					</div>
+					<img
+						src="{% static 'img/tasklist_initenary.png' %}"
+						alt="anh introduce"
+						class="img-intro"
+					/>
+				</div>
+
+				<div class="introduce-never">
+					<div class="content-introduce">
+						<div class="tittle-introduce">Friendly Mobile UI</div>
+						<div class="subtittle-introduce">
+							Create your own creative and colorful world,
+							pastime, Trip, Worthy picture, all the momments you
+							desire to capture
+						</div>
+					</div>
+					<img
+						src="{% static 'img/mobile_Friendly.jpg' %}"
+						alt="contact-title"
+						class="resize"
+					/>
+				</div>
+
+				<div class="footer">
+					<div>
+						<img
+							class="logo"
+							src="{% static 'img/ToDoApp.svg' %}"
+							alt=""
+						/>
+						<div class="tittle-footer">Try today</div>
+
+						<div class="subtittle">Get start for free.</div>
+
+						<div class="subtittle">
+							Add your whole team as your needs grow.
+						</div>
+						<button class="button-logup js-button-logup">
+							Try free
+						</button>
+					</div>
+				</div>
+				<!-- Footer start-->
+				<div class="container">
+					<footer class="py-5">
+						<div class="row">
+							<div class="col-2">
+								<h5>Section</h5>
+								<ul class="nav flex-column">
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Home</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Features</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Pricing</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>FAQs</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>About</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div class="col-2">
+								<h5>Section</h5>
+								<ul class="nav flex-column">
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Home</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Features</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Pricing</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>FAQs</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>About</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div class="col-2">
+								<h5>Section</h5>
+								<ul class="nav flex-column">
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Home</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Features</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>Pricing</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>FAQs</a
+										>
+									</li>
+									<li class="nav-item mb-2">
+										<a
+											href="#"
+											class="nav-link p-0 text-muted"
+											>About</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div class="col-4 offset-1">
+								<form>
+									<h5>Subscribe to our newsletter</h5>
+									<p>
+										Monthly digest of whats new and exciting
+										from us.
+									</p>
+									<div class="d-flex w-100 gap-2">
+										<label
+											for="newsletter1"
+											class="visually-hidden"
+											>Email address</label
+										>
+										<input
+											id="newsletter1"
+											type="text"
+											class="form-control"
+											placeholder="Email address"
+										/>
+										<button
+											class="btn btn-primary"
+											type="button"
+										>
+											Subscribe
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div
+							class="
+								d-flex
+								justify-content-between
+								py-4
+								my-4
+								border-top
+							"
+						>
+							<p>
+								&copy; 2021 Company, Inc. All rights reserved.
+							</p>
+							<ul class="list-unstyled d-flex">
+								<li class="ms-3">
+									<a class="link-dark" href="#"
+										><svg class="bi" width="24" height="24">
+											<use xlink:href="#twitter" /></svg
+									></a>
+								</li>
+								<li class="ms-3">
+									<a class="link-dark" href="#"
+										><svg class="bi" width="24" height="24">
+											<use xlink:href="#instagram" /></svg
+									></a>
+								</li>
+								<li class="ms-3">
+									<a class="link-dark" href="#"
+										><svg class="bi" width="24" height="24">
+											<use xlink:href="#facebook" /></svg
+									></a>
+								</li>
+							</ul>
+						</div>
+					</footer>
+				</div>
+				<!-- Footer ends-->
+			</div>
+		</main>
+		<div class="modal js-modal">
+			<div class="modal-container">
+				<div class="modal-close fas fa-times js-modal-close"></div>
+				<div class="modal-heading">
+					<i class="fas fa-sign-in-alt"></i>
+					LOG IN
+				</div>
+				<div class="modal-body">
+					<form method="POST">
+						{% csrf_token %}
+						<div class="modal-body-label">
+							<i class="fas fa-user"></i>
+							Username
+						</div>
+						<input
+							class="modal-input"
+							type="text"
+							placeholder="Enter Username"
+							name="username"
+						/>
+						<div class="modal-body-label">
+							<i class="fas fa-key"></i>
+							Password
+						</div>
+						<input
+							class="modal-input"
+							type="password"
+							placeholder="Enter Password"
+							name="password"
+						/>
+						<button
+							class="button-pay"
+							type="submit"
+							name="button-login"
+						>
+							Log In
+							<i class="fas fa-check"></i>
+						</button>
+					</form>
+				</div>
+				<div class="modal-body-help">
+					I don't have account
+					<a href="">Sign up</a>
+				</div>
+			</div>
+		</div>
+		<div class="modal js-modal_logup">
+			<div class="modal-container">
+				<div class="modal-close fas fa-times js-modal-close-up"></div>
+				<div class="modal-heading">
+					<i class="fas fa-sign-in-alt"></i>
+					SIGN UP
+				</div>
+				<div class="modal-body">
+					<form method="POST">
+						{% csrf_token %}
+						<div class="modal-body-label">
+							<i class="fas fa-user"></i>
+							Username
+						</div>
+						<input
+							class="modal-input"
+							type="text"
+							placeholder="Enter Username"
+							name="username"
+						/>
+						<div class="modal-body-label">
+							<i class="fas fa-key"></i>
+							Password
+						</div>
+						<input
+							class="modal-input"
+							type="password"
+							placeholder="Enter Password"
+							name="password1"
+						/>
+						<div class="modal-body-label">
+							<i class="fas fa-key"></i>
+							Confirm Password
+						</div>
+						<input
+							class="modal-input"
+							type="password"
+							placeholder="Enter Confirm Password"
+							name="password2"
+						/>
+						<button
+							class="button-pay"
+							name="button-logup"
+							type="submit"
+						>
+							Sign Up
+							<i class="fas fa-check"></i>
+						</button>
+					</form>
+				</div>
+				<div class="modal-body-help js_remove_show_login">
+					I have account
+					<a href="">Sign in</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="{% static 'javascript/script.js' %}"></script>
+</html>
